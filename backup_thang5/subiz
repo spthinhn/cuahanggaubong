@@ -1,0 +1,47 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Test Preview</title>
+<link type="text/css" rel="stylesheet" href="reset.css" />
+<link type="text/css" rel="stylesheet" href="subiz-review.css" />
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jsreview.js"></script>
+</head>
+
+<body>
+<div id="topreview" >
+	<div id="logoreview" class="imgreview"></div>
+        <div id="btnback" style="display:none"><a href="javascript:void(0)" id="back" class="btnsgo">Back</a></div>
+</div>
+<span class="indicator-down"></span>
+<div id="iframe_preview" name="iframe_preview">
+	<iframe id="onpage" src="http://www.subiz.com/"></iframe>
+</div>
+<div id="contentreview">
+	<div class="toppage">
+    	<span><b>SAMPLE</b>PAGE</span>
+        <div id="nav">
+        	<ul>
+            	<li>about</li>
+                <li>services</li>
+                <li>contact</li>
+            </ul>
+        </div>
+    </div>
+    <div id="mainreview">
+    	<div id="teaser">
+        	<div class="previewOwnWebsite">
+            	Preview on
+                <input type="text" name="" placeholder="http://www.subiz.com" class="text" style="width:50%;" />
+                <a href="#" class="btnsgo" id="go_subiz">GO</a>
+            </div>
+        	<h1>This is how all your visitors will see LiveChat component on a page. <a href="#">Preview it on yours</a>.</h1>
+        </div>
+        <p>LiveChat is an easy and quick way to chat with your on-site visitors. You get the ability to interact with visitors and customers, just like in a real shop. Make the first step towards better customer service and start chatting!</p>
+    </div>
+</div>
+<script type='text/javascript'>window._sbzq||function(e){e._sbzq=[];var t=e._sbzq;t.push(["_setAccount",5199]);var n=e.location.protocol=="https:"?"https:":"http:";var r=document.createElement("script");r.type="text/javascript";r.async=true;r.src=n+"//static.subiz.com/public/js/loader.js";var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)}(window);</script> 
+</body>
+</html>

@@ -1,0 +1,90 @@
+/* CSS Document */
+
+/*css form*/
+.webForm{
+	width:315px;
+	float:left;
+}
+.webForm label {
+	display:block;
+}
+.webForm label .required {
+	color:#f00;
+}
+.webForm input[type="text"], .webForm input[type="password"] {
+	padding:5px 0 5px 10px;
+	width:300px;
+	height:18px;
+}
+.webForm textarea {
+	padding:5px 10px;
+	width:290px;
+	resize:none;
+	height:150px;
+}
+.webForm input[type="submit"], .webForm input[type="button"] {
+	border:medium none;
+	cursor:pointer;
+	font-weight:bold;
+	border-radius:3px;
+	padding:5px 10px;
+	background:#07A2FF;
+	color:#fff;
+}
+#formLogin input[type="text"], #formLogin input[type="password"], #formSearch input[type="text"] {
+	width:160px !important;
+}
+#captchaImg, #captchaImgReply {
+	border-radius:3px;
+}
+.address{
+	float:right;
+	width:215px;
+}
+/*css validate ajax*/
+.ajax-loader {
+	display:none;
+}
+.ajax-result {
+	padding:5px;
+	border-radius:3px;
+	background:#07a2ff;
+	color:#fff;
+	font-weight:bold;
+	display:none;
+}
+.error {
+	border: 1px solid #c00;
+}
+#formOptin .ajax-loader{
+	position:absolute;
+	left:40%;
+	top:38px;
+}
+/*css phan trang*/
+.Paging, .pagination {
+	float:left;
+	width:100%;
+	margin-top:10px;
+}
+.Paging ul, .pagination ul {
+	text-align:center;
+}
+.Paging ul li, .pagination ul li {
+	display:inline-block;
+	margin-left:5px;
+	font-weight:bold;
+}
+.Paging ul li a, .pagination ul li a {
+	height: 25px;
+	display: block;
+	padding:0 10px;
+	border-radius:3px;
+	background:#056BCD;
+	color:#fff;
+	line-height:23px;
+}
+.Paging ul li a.Active, .Paging ul li a:hover, .pagination ul li a.active, .pagination ul li a:hover {
+	background:#30B1FF;
+	cursor:pointer;
+}
