@@ -1,7 +1,7 @@
 <?php
 	function get_product_name($pid){
 		global $d, $row,$lang;
-		$sql = "select ten_$lang from #_product where id='".$pid."'";
+		$sql = "select ten_$lang from table_product where id='".$pid."'";
 		$d->query($sql);
 		$row = $d->fetch_array();
 		return $row['ten_'.$lang];
@@ -9,35 +9,11 @@
 
 	function get_fc_size_price($id_size){
 		global $d, $row;
-		$sql = "select * from #_size where id='".$id_size."'";
+		$sql = "select * from table_size where id='".$id_size."'";
 		$d->query($sql);
 		$row = $d->fetch_array();
 		return $row;
-	}
-
-	function get_size($pid, $check){
-		global $d, $row;
-		$sql = "select size,size2 from table_product where id='".$pid."'";
-		$d->query($sql);
-		$row = $d->fetch_array();
-		if ($check == 0) {
-			return $row['size'];
-		} else {
-			return $row['size2'];
-		}
-	}
-	
-	function get_price($pid, $check){
-		global $d, $row;
-		$sql = "select giaban,giaban2 from table_product where id='".$pid."'";
-		$d->query($sql);
-		$row = $d->fetch_array();
-		if ($check == 0) {
-			return $row['giaban'];
-		} else {
-			return $row['giaban2'];
-		}
-	}
+	}	
 		
 	function get_thumb($pid){
 		global $d, $row;
@@ -76,13 +52,13 @@
 			$pid=$_SESSION['cart'][$i]['productid'];
 			$check=$_SESSION['cart'][$i]['check'];
 			$q=$_SESSION['cart'][$i]['qty'];
-			$price=get_fc_size_price($check)['price'];
+			$fc=get_fc_size_price($check);
+			$price=$fc['price'];
 			$sum+=$price*$q;
 		}
 		return $sum;
 	}
 	function addtocart($pid,$q,$check){
-		if($pid<1 or $q<1) return;
 		
 		if(is_array($_SESSION['cart'])){
 			if(product_exists($pid,$q,$check)) return 0;

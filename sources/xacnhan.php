@@ -111,17 +111,21 @@ if(!empty($_POST)){
 				$max=count($_SESSION['cart']);
 				$tonggiam = 0;
 				for($i=0;$i<$max;$i++){
+
 					$pid=$_SESSION['cart'][$i]['productid'];
 					$q=$_SESSION['cart'][$i]['qty'];
+					$check=$_SESSION['cart'][$i]['check'];
 					$pname=get_product_name($pid);
-					
+					$fc=get_fc_size_price($check);
+					$size=$fc['size'];
+					$price=$fc['price'];
 					if($q==0) continue;
             		$body.='<tr><td>'.($i+1).'</td>';
 					$body.='<td> <a href="http://'.$config_url.'/san-pham/'.$pid.'/'.changeTitle($pname).'.html" target="_blank"><img src="http://'.$config_url.'/upload/product/'.get_thumb($pid).'" width="70" /></a></td>';
             		$body.='<td><a href="http://'.$config_url.'/san-pham/'.$pid.'/'.changeTitle($pname).'.html" target="_blank">'.$pname.'</a></td>';
-                    $body.='<td>'.number_format(get_price($pid),0, ',', '.').'&nbsp;VND</td>';
+                    $body.='<td>'.number_format($price,0, ',', '.').'&nbsp;VND</td>';
                     $body.='<td>'.$q.'</td>';                 
-                    $body.='<td>'.number_format(get_price($pid)*$q,0, ',', '.') .'&nbsp;VND</td>
+                    $body.='<td>'.number_format($price,0, ',', '.') .'&nbsp;VND</td>
                     </tr>';
 				}
 				$body.='<tr><td colspan="6">
@@ -173,8 +177,9 @@ if(!empty($_POST)){
 				$check=$_SESSION['cart'][$i]['check'];
 				$q=$_REQUEST[$check.'product'.$pid];
 				$pname=get_product_name($pid);
-				$size=get_fc_size_price($check)['size'];
-				$price=get_fc_size_price($check)['price'];
+				$fc=get_fc_size_price($check);
+				$size=$fc['size'];
+				$price=$fc['price'];
 
 
 				alert('a');

@@ -39,8 +39,9 @@ if($_REQUEST['command']=='delete' && $_REQUEST['pid']>0){
 			$check=$_SESSION['cart'][$i]['check'];
 			$q=$_REQUEST[$check.'product'.$pid];
 			$pname=get_product_name($pid);
-			$size=get_fc_size_price($check)['size'];
-			$price=get_fc_size_price($check)['price'];
+			$fc=get_fc_size_price($check);
+			$size=$fc['size'];
+			$price=$fc['price'];
 
 			if($q>0 && $q<=999){
 				$soluong = str_replace(",", '.', $q);
@@ -127,8 +128,9 @@ $(document).ready(function(e) {
 					$q=$_SESSION['cart'][$i]['qty'];
 					$check=$_SESSION['cart'][$i]['check'];
 					$pname=get_product_name($pid);
-					$size=get_fc_size_price($check)['size'];
-					$price=get_fc_size_price($check)['price'];
+					$fc=get_fc_size_price($check);
+					$size=$fc['size'];
+					$price=$fc['price'];
 					if($q==0) continue;
 					
 			?>
